@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.score {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+}
+
+#container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pixel {
+  background-color: #ece4d8;
+  width: 10px;
+  height: 10px;
+}
