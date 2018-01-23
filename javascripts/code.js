@@ -37,7 +37,11 @@ class Snake {
       w: UP,
       s: DOWN,
       a: LEFT,
-      d: RIGHT
+      d: RIGHT,
+      ArrowUp: UP,
+      ArrowDown: DOWN,
+      ArrowLeft: LEFT,
+      ArrowRight: RIGHT
     }
 
     document.addEventListener('keydown', (event) => {
