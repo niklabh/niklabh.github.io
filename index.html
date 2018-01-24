@@ -8,43 +8,29 @@
     <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
     <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
     <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
     <link rel="stylesheet" href="stylesheets/snake.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+
 
     <script type="text/javascript" src="javascripts/modernizr.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
         $('#main_content').headsmart()
       })
     </script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <title>Niklabh ERMAHGERD by niklabh</title>
   </head>
 
   <body>
     <a id="forkme_banner" href="https://github.com/niklabh">View on GitHub</a>
     <div class="shell">
-
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Nikhil Ranjan</h1>
-            <h2>Nikhil Github IO page</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
-
-      <div id="no-downloads">
-        <span class="inner">
-        </span>
-      </div>
-
-
-      <span class="banner-fix"></span>
-
-
       <section id="main_content">
         <h1 class="heading">Snake</h1>
         <div class="score">
@@ -52,22 +38,17 @@
           <div> w: up, s: down, a: left, d: right</div>
         </div>
         <div id="container"></div>
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">
+          <button id="create" class="waves-effect waves-light btn">Create Game</button>
+          <ul class="collection with-header" id="list">
+            <li class="collection-header"><h4>Games</h4></li>
+          </ul>
+        </div>
       </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>Project by <a href="https://github.com/niklabh">niklabh</a> vanilla js <a href="https://github.com/niklabh/vanilla-js-snake">Snake</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <span class="octocat"></span>
-      </footer>
-
     </div>
 
-    <script src="javascripts/code.js"></script>
+    <script src="javascripts/scripts.min.js"></script>
 
   </body>
 </html>

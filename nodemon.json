@@ -1,0 +1,4 @@
+{
+  "watch": ["src/", "index.html", "webpack.config.js"],
+  "exec": "npm run build && serve . -n"
+}
