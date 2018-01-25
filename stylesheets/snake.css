@@ -25,7 +25,12 @@ body {
   height: 10px;
 }
 
+#create {
+  margin: 10px;
+}
+
 #loader {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
 }
