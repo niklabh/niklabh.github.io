@@ -20,11 +20,16 @@
   },
   "homepage": "https://github.com/niklabh/niklabh.github.io#readme",
   "dependencies": {
+    "alertifyjs": "^1.11.0",
     "firebaseui": "^2.5.1"
   },
   "devDependencies": {
     "nodemon": "^1.14.11",
+    "pre-push": "^0.1.1",
     "serve": "^6.4.9",
     "webpack": "^3.10.0"
-  }
+  },
+  "pre-push": [
+    "build:prod"
+  ]
 }

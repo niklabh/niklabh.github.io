@@ -1,3 +1,4 @@
+import alertify from 'alertifyjs'
 import firebase from '../firebase'
 import Snake from './Snake'
 import RemoteSnake from './RemoteSnake'
@@ -45,6 +46,7 @@ class Game {
     this.receive()
     this.start()
 
+    alertify.success('Created!')
     console.log('created:', pushRef.key)
   }
 
@@ -64,6 +66,8 @@ class Game {
       this.receiveFood()
 
       console.log('joined:', key)
+      alertify.success('Joined!')
+
       return game
     })
   }

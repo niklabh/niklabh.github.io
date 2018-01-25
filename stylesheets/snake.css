@@ -34,3 +34,7 @@ body {
   justify-content: space-around;
   flex-direction: column;
 }
+
+ul#list li {
+  cursor: pointer;
+}
