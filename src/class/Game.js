@@ -20,6 +20,7 @@ class Game {
 
     this.canvas()
     this.list()
+    this.joined()
 
     document.getElementById('create').onclick = () => this.create()
   }
@@ -42,6 +43,7 @@ class Game {
     this.key = pushRef.key
     this.player = PLAYER.CREATOR
     this.receive()
+    this.start()
 
     console.log('created:', pushRef.key)
   }
@@ -59,9 +61,22 @@ class Game {
       this.key = key
       this.player = PLAYER.JOINER
       this.receive()
+      this.receiveFood()
 
       console.log('joined:', key)
       return game
+    })
+  }
+
+  joined () {
+    if (!this.key) return
+
+    const ref = this.ref.child(`${this.key}/state`)
+
+    ref.on('value', (snapshot) => {
+      if (snapshot.val() === STATE.JOINED) {
+        this.start()
+      }
     })
   }
 
@@ -126,13 +141,36 @@ class Game {
     this.receiveRef = ref
   }
 
+  sendFood (food) {
+    if (!this.key) return
+    if (this.player !== PLAYER.CREATOR) return
+
+    const ref = this.ref.child(`${this.key}/food`)
+
+    console.log(ref, food)
+
+    ref.set(food)
+  }
+
+  receiveFood () {
+    if (!this.key) return
+    if (this.player !== PLAYER.JOINER) return
+
+    const ref = this.ref.child(`${this.key}/food`)
+
+    ref.on('value', (snapshot) => {
+      this.food.receive(snapshot.val())
+    })
+  }
+
   start () {
     this.snake = new Snake(SNAKE_BODY)
     this.remoteSnake = new RemoteSnake(REMOTE_SNAKE_BODY)
-    this.food = new Food()
+    this.food = new Food(this.width, this.height)
+    this.food.send = this.sendFood.bind(this)
 
     this.snake.send = (direction) => this.send(direction)
-    this.food.generate(this.width, this.height)
+    this.food.generate()
 
     if (this.interval) clearInterval(this.interval)
     this.interval = setInterval(() => {
@@ -172,7 +210,7 @@ class Game {
     this.render()
 
     if (this.snake.dead() || this.remoteSnake.dead()) {
-      return setTimeout(() => this.start(), 0)
+      setTimeout(this.start, 0)
     }
   }
 }

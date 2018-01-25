@@ -45,7 +45,7 @@ class Snake {
 
     const newHead = moveMap[this.direction](this.body[0])
     if (food.exists(newHead)) {
-      food.generate(width, height)
+      food.generate()
       this.score++
     } else {
       this.body.pop()

@@ -1,5 +1,7 @@
 class Food {
-  constructor () {
+  constructor (width, height) {
+    this.width = width
+    this.height = height
     this.x = 0
     this.y = 0
   }
@@ -8,9 +10,20 @@ class Food {
     return this.x === x && this.y === y
   }
 
-  generate (width, height) {
-    this.x = Math.floor(Math.random() * width)
-    this.y = Math.floor(Math.random() * height)
+  generate () {
+    this.x = Math.floor(Math.random() * this.width)
+    this.y = Math.floor(Math.random() * this.height)
+
+    this.send({x: this.x, y: this.y})
+  }
+
+  send ({x, y}) {
+    // no op
+  }
+
+  receive ({x, y}) {
+    this.x = x
+    this.y = y
   }
 }
 
