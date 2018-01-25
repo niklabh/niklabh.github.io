@@ -24,3 +24,8 @@ body {
   width: 10px;
   height: 10px;
 }
+
+#loader {
+  display: flex;
+  justify-content: space-around;
+}
