@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/alertify.min.css" />
+    <link rel="stylesheet" href="stylesheets/snake.css"/>
+
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <title>Multiplayer Snake</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/niklabh/niklabh.github.io">View on GitHub</a>
+    <div class="shell">
+      <section id="main_content">
+        <h1 class="heading">Multiplayer Snake</h1>
+        <div class="score">
+          <div>Score: <span id="score">0</span></div>
+          <div> w: up, s: down, a: left, d: right</div>
+        </div>
+        <div id="container"></div>
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">
+          <button id="create" class="waves-effect waves-light btn">Create Game</button>
+          <ul class="collection with-header" id="list">
+            <li class="collection-header"><h4>Games (click to join)</h4></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <script src="javascripts/scripts.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44811120-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-44811120-2');
+    </script>
+
+
+  </body>
+</html>
