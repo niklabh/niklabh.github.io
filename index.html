@@ -6,119 +6,1212 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/favicon.ico">
-  <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Home" />
 
-  <title>Nikhil Ranjan | Home</title>
-  <meta property="og:title" content="Nikhil Ranjan" />
+  <title>Nikhil Ranjan — Software Architect · Rust · Polkadot · Systems</title>
+  <meta name="description" content="Nikhil Ranjan is a software architect building scalable, decentralized systems. CTO & Co-founder of Polkassembly, ex-Parity, ex-DFINITY. Creator of Oxide and VelociDB." />
   <meta name="author" content="Nikhil Ranjan" />
-  <meta property="og:locale" content="en" />
-  <meta name="description" content="Website of Nikhil Ranjan" />
-  <meta property="og:description" content="Website of Nikhil Ranjan" />
-  <link rel="canonical" href="https://nikhilranjan.com/" />
+  <meta name="theme-color" content="#0b0b10" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nikhil Ranjan — Software Architect" />
+  <meta property="og:description" content="Architecting scalable, decentralized systems. Rust · Polkadot · WebAssembly. CTO @ Polkassembly. Creator of Oxide & VelociDB." />
   <meta property="og:url" content="https://nikhilranjan.com/" />
-  <meta property="og:site_name" content="Home" />
+  <meta property="og:site_name" content="Nikhil Ranjan" />
+  <meta property="og:image" content="https://github.com/niklabh.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@niklabh" />
+  <meta name="twitter:title" content="Nikhil Ranjan — Software Architect" />
+  <meta name="twitter:description" content="Architecting scalable, decentralized systems. Rust · Polkadot · WebAssembly." />
+  <meta name="twitter:image" content="https://github.com/niklabh.png" />
+
+  <link rel="canonical" href="https://nikhilranjan.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <script type="application/ld+json">
     {
-      "name":"Nikhil Ranjan",
-      "description":"Website of Nikhil Ranjan",
-      "author":{"@type":"Person","name":"Nikhil Ranjan"},
-      "@type":"WebSite",
-      "url":"https://nikhilranjan.com/",
-      "publisher":{
-        "@type":"Organization",
-        "logo":{"@type":"ImageObject","url":"https://github.com/niklabh.png"},
-        "name":"Nikhil Ranjan"
-      },
-      "headline":"Nikhil Ranjan",
-      "sameAs":[
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Nikhil Ranjan",
+      "alternateName": "niklabh",
+      "url": "https://nikhilranjan.com/",
+      "image": "https://github.com/niklabh.png",
+      "jobTitle": "Software Architect, CTO & Co-founder of Polkassembly",
+      "worksFor": { "@type": "Organization", "name": "Polkassembly" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE" },
+      "sameAs": [
         "https://github.com/niklabh",
-        "https://www.npmjs.com/~niklabh",
         "https://www.linkedin.com/in/niklabh/",
-        "https://www.facebook.com/niklabh",
-        "https://www.instagram.com/niklabh/",
-        "https://www.youtube.com/channel/UCj-xEmgBk6JDozKyLqhwoRQ",
-        "https://medium.com/@nikhilranjan"
-      ],
-      "@context":"http://schema.org"
+        "https://x.com/niklabh",
+        "https://medium.com/@nikhilranjan",
+        "https://www.npmjs.com/~niklabh"
+      ]
     }
   </script>
 
   <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-2: #11111a;
+      --surface: #161620;
+      --surface-2: #1d1d2a;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.14);
+      --text: #ECECF1;
+      --text-2: #A8A8B8;
+      --text-3: #6E6E80;
+      --pink: #E6007A;
+      --pink-2: #FF2D92;
+      --cyan: #7AF5FF;
+      --violet: #9B6DFF;
+      --orange: #FFA940;
+      --green: #5BE49B;
+      --gradient: linear-gradient(135deg, #E6007A 0%, #9B6DFF 50%, #7AF5FF 100%);
+      --radius: 14px;
+      --radius-lg: 22px;
+      --shadow-glow: 0 0 80px -20px rgba(230, 0, 122, 0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
     body {
-      max-width: 40em;
-      margin: auto;
-      font-family: -apple-system,
-        BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-        "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
-      padding: 0 2%;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    footer {
+    /* Animated background */
+    .bg-grid {
+      position: fixed; inset: 0; z-index: -2;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
+    }
+    .bg-glow {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(circle 600px at 15% -10%, rgba(230, 0, 122, 0.18), transparent 60%),
+        radial-gradient(circle 500px at 85% 10%, rgba(155, 109, 255, 0.18), transparent 60%),
+        radial-gradient(circle 700px at 50% 50%, rgba(122, 245, 255, 0.06), transparent 70%);
+    }
+
+    a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: var(--pink-2); }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav.top {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      background: rgba(10, 10, 15, 0.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 24px; max-width: 1180px; margin: 0 auto;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 700; letter-spacing: -0.01em; font-size: 16px;
+    }
+    .brand-mark {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: var(--gradient);
+      display: grid; place-items: center;
+      color: #0a0a0f; font-weight: 800; font-size: 14px;
+      box-shadow: 0 0 20px rgba(230,0,122,0.35);
+    }
+    .nav-links { display: flex; gap: 28px; font-size: 14px; }
+    .nav-links a { color: var(--text-2); font-weight: 500; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      padding: 8px 14px; border-radius: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border-strong);
+      font-size: 13px; font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .nav-cta:hover { background: var(--pink); border-color: var(--pink); color: white; }
+    @media (max-width: 720px) { .nav-links { display: none; } }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 80px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 72px;
+      align-items: center;
+    }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 12px; border-radius: 999px;
+      background: rgba(230, 0, 122, 0.1);
+      border: 1px solid rgba(230, 0, 122, 0.3);
+      color: var(--pink-2);
+      font-size: 13px; font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pink-2); box-shadow: 0 0 8px var(--pink-2); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    h1.hero-title {
+      font-size: clamp(40px, 6.5vw, 72px);
+      line-height: 1.02; letter-spacing: -0.035em;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 1.5vw, 19px);
+      color: var(--text-2);
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 600; }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 12px;
+      font-size: 15px; font-weight: 500;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: #0a0a0f;
+      font-weight: 600;
+      box-shadow: var(--shadow-glow);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 100px -10px rgba(230,0,122,0.6); color: #0a0a0f; }
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); color: var(--text); }
+
+    .hero-socials { display: flex; gap: 18px; align-items: center; color: var(--text-3); font-size: 14px; }
+    .hero-socials a { display: inline-flex; align-items: center; gap: 6px; color: var(--text-2); font-weight: 500; }
+    .hero-socials a:hover { color: var(--pink-2); }
+    .hero-socials svg { width: 18px; height: 18px; }
+
+    /* Hero globe */
+    .portrait-wrap {
+      position: relative;
+      display: grid; place-items: center;
+      min-height: 420px;
+    }
+    .globe {
+      width: 100%; max-width: 440px; aspect-ratio: 1;
+      position: relative;
+      display: grid; place-items: center;
+    }
+    .globe::before {
+      content: ''; position: absolute; inset: 8%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, rgba(230,0,122,0.35), rgba(155,109,255,0.18) 45%, transparent 70%);
+      filter: blur(40px); opacity: 0.9; z-index: 0;
+      animation: pulseGlow 6s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    .globe canvas {
+      width: 100%; height: 100%;
+      position: relative; z-index: 1;
+      cursor: grab;
+      touch-action: none;
+    }
+    .globe canvas:active { cursor: grabbing; }
+    .globe-ring {
+      position: absolute; inset: 12%;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .globe-ring.r2 { inset: 4%; border-color: rgba(255,255,255,0.04); }
+    .globe-ring.r3 {
+      inset: 18%;
+      border: 1px dashed rgba(230,0,122,0.18);
+      animation: spin 30s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .floating-card {
+      position: absolute;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      font-size: 13px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .floating-card .ico {
+      width: 30px; height: 30px; border-radius: 8px;
+      display: grid; place-items: center;
+      background: rgba(230,0,122,0.15); color: var(--pink-2);
+      font-size: 14px; font-weight: 700;
+    }
+    .floating-card .ico.cyan { background: rgba(122,245,255,0.12); color: var(--cyan); }
+    .floating-card .ico.violet { background: rgba(155,109,255,0.15); color: var(--violet); }
+    .floating-card .meta { display: flex; flex-direction: column; line-height: 1.2; }
+    .floating-card .meta b { color: var(--text); font-weight: 600; font-size: 13px; }
+    .floating-card .meta span { color: var(--text-3); font-size: 11px; }
+    .fc-1 { top: 8%; left: -8%; animation: float 6s ease-in-out infinite; }
+    .fc-2 { bottom: 12%; right: -10%; animation: float 7s ease-in-out infinite reverse; }
+    .fc-3 { bottom: -4%; left: 8%; animation: float 8s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @media (max-width: 900px) { .floating-card { display: none; } }
+
+    /* Section */
+    section { padding: 80px 0; position: relative; }
+    .section-header { margin-bottom: 48px; }
+    .section-eyebrow {
+      font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--pink-2); margin-bottom: 12px;
+    }
+    h2.section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.1; letter-spacing: -0.025em;
+      font-weight: 700; margin-bottom: 14px;
+    }
+    .section-desc {
+      color: var(--text-2); font-size: 17px; max-width: 680px;
+    }
+
+    /* Marquee / logos */
+    .marquee {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
+      overflow: hidden;
+      background: rgba(255,255,255,0.015);
+    }
+    .marquee-inner {
+      display: flex; gap: 60px; align-items: center;
+      animation: scroll 40s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      color: var(--text-3); font-weight: 600; font-size: 18px;
+      letter-spacing: -0.01em;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .marquee-item .sep { color: var(--text-3); opacity: 0.4; }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+    }
+    @media (max-width: 800px) { .projects-grid { grid-template-columns: 1fr; } }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--card-accent, var(--gradient));
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .project-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-4px);
+      background: var(--surface-2);
+    }
+    .project-card:hover::before { opacity: 1; }
+    .project-head {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .project-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center;
+      font-size: 22px; font-weight: 700;
+      background: var(--icon-bg, rgba(230,0,122,0.12));
+      color: var(--icon-color, var(--pink-2));
+    }
+    .project-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 999px;
+      background: rgba(255,255,255,0.05); color: var(--text-3);
+      border: 1px solid var(--border);
+    }
+    .project-card h3 {
+      font-size: 22px; font-weight: 700; letter-spacing: -0.015em;
+      margin-bottom: 10px;
+    }
+    .project-card p {
+      color: var(--text-2); font-size: 15px; line-height: 1.6;
+      margin-bottom: 18px; flex: 1;
+    }
+    .project-tech {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px;
+    }
+    .project-tech span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; padding: 4px 8px; border-radius: 6px;
+      background: rgba(255,255,255,0.04); color: var(--text-2);
+      border: 1px solid var(--border);
+    }
+    .project-links { display: flex; gap: 16px; }
+    .project-links a {
+      color: var(--text-2); font-size: 14px; font-weight: 500;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .project-links a:hover { color: var(--pink-2); }
+    .project-links svg { width: 14px; height: 14px; }
+
+    /* Polkadot showcase */
+    .polkadot-showcase {
+      background: linear-gradient(135deg, rgba(230,0,122,0.08), rgba(155,109,255,0.04));
+      border: 1px solid rgba(230,0,122,0.2);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      margin-top: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .polkadot-showcase::before {
+      content: ''; position: absolute; top: -50%; right: -20%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(230,0,122,0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .polkadot-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px;
+      align-items: center; position: relative; z-index: 1;
+    }
+    @media (max-width: 800px) { .polkadot-grid { grid-template-columns: 1fr; gap: 32px; } .polkadot-showcase { padding: 32px 24px; } }
+
+    .polkadot-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stat {
+      background: rgba(10,10,15,0.5);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      backdrop-filter: blur(8px);
+    }
+    .stat .num {
+      font-size: 32px; font-weight: 700; letter-spacing: -0.02em;
+      background: var(--gradient);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px; line-height: 1;
+    }
+    .stat .lbl { color: var(--text-2); font-size: 13px; font-weight: 500; }
+
+    .polkadot-list { list-style: none; margin-top: 22px; display: flex; flex-direction: column; gap: 12px; }
+    .polkadot-list li {
+      display: flex; gap: 12px; align-items: flex-start;
+      color: var(--text-2); font-size: 15px;
+    }
+    .polkadot-list li::before {
+      content: ''; flex: none; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--pink-2); margin-top: 9px;
+      box-shadow: 0 0 8px var(--pink-2);
+    }
+    .polkadot-list li strong { color: var(--text); font-weight: 600; }
+
+    /* Experience timeline */
+    .timeline { position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 11px; top: 8px; bottom: 8px;
+      width: 1px; background: linear-gradient(to bottom, var(--pink), var(--violet), var(--cyan), transparent);
+      opacity: 0.5;
+    }
+    .tl-item { position: relative; padding-left: 44px; padding-bottom: 36px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: 4px; top: 6px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--pink);
+      box-shadow: 0 0 0 4px rgba(230,0,122,0.1);
+    }
+    .tl-meta {
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px;
+      margin-bottom: 6px;
+    }
+    .tl-meta .role { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+    .tl-meta .at { color: var(--pink-2); font-weight: 600; }
+    .tl-meta .dates {
+      margin-left: auto; color: var(--text-3); font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .tl-item p { color: var(--text-2); font-size: 15px; max-width: 760px; }
+
+    /* Skills */
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    @media (max-width: 800px) { .skills-grid { grid-template-columns: 1fr; } }
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: all 0.2s ease;
+    }
+    .skill-card:hover { border-color: var(--border-strong); background: var(--surface-2); }
+    .skill-card h4 {
+      font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--pink-2); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .skill-card h4 .ico { font-size: 18px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tags span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; padding: 5px 10px; border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    /* Contact */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(230,0,122,0.06), rgba(155,109,255,0.04));
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
       text-align: center;
-      font-size: 0.8em;
-      margin-top: 5vh;
+      position: relative;
+      overflow: hidden;
     }
+    .contact-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(230,0,122,0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .contact-card h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; letter-spacing: -0.025em; position: relative; }
+    .contact-card p { color: var(--text-2); font-size: 17px; margin-bottom: 28px; position: relative; }
+    .contact-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+    @media (max-width: 600px) { .contact-card { padding: 40px 24px; } }
 
-    pre {
-      border: 1px solid #212121;
-      padding: 1em;
-      overflow: auto;
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+      margin-top: 40px;
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+      color: var(--text-3); font-size: 14px;
+    }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { color: var(--text-2); }
+    .footer-links a:hover { color: var(--pink-2); }
+    .footer-pgp { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; }
+      .floating-card, .marquee-inner, .badge .dot { animation: none !important; }
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <div class="left" style="text-align:left;float:left">
-        <a href="/">Home</a>
-      </div>
-      <div class="right" style="text-align:right;">
-        <a href="/snake.html">Snake</a>
-      </div>
-    </nav>
-    <h1>Nikhil Ranjan</h1>
-    <hr />
-  </header>
-  <main>
-    <article>
-      <h1 id="about-me">About Me</h1>
-      <p>I’m Nikhil Ranjan. I am a full stack software engineer with experience in startup to unicorn companies.
-        I have worked with highly scalable systems handling millions of users. I have expertise in javascript, golang and rust.
-        I have worked for <a href="https://paytm.com">Paytm</a> and <a href="https://tokopedia.com">Tokopedia</a>.
-      </p>
-      <p>I have learnt Computer Science at <a href="http://www.ipu.ac.in/usict/">IP university</a>.
-        I have followed <a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a> course.
-        I publish npm packages. Check out my <a href="https://www.npmjs.com/~niklabh">npm</a> packages.
-        Also check out my open source contributions at <a href="https://github.com/niklabh">Github</a>.
-        And read my blog at <a href="https://medium.com/@nikhilranjan">Medium</a>.
-      </p>
-      <p>PGP Key: <a href="/assets/pgp.txt">0xB5F2384F</a></p>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-    </article>
+  <nav class="top">
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="Nikhil Ranjan home">
+        <span class="brand-mark">N</span>
+        <span>Nikhil Ranjan</span>
+      </a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#polkadot">Polkadot</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="/Nikhil%20Ranjan%20Resume%202026.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="badge"><span class="dot"></span> Available for select Rust &amp; systems work</div>
+            <h1 class="hero-title">
+              Architecting the next layer of the <span class="gradient-text">decentralized web</span>.
+            </h1>
+            <p class="hero-sub">
+              I'm <strong>Nikhil Ranjan</strong> — a software architect in Berlin building scalable, decentralized systems.
+              CTO &amp; Co-founder of <strong>Polkassembly</strong>, ex-<strong>Parity</strong>, ex-<strong>DFINITY</strong>.
+              I write a lot of <strong>Rust</strong>, ship in the open, and care deeply about systems engineering, sandboxed runtimes, and on-chain governance.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">
+                Explore my work
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a class="btn btn-secondary" href="https://github.com/niklabh" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97.01 1.95.14 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                GitHub
+              </a>
+            </div>
+            <div class="hero-socials">
+              <a href="https://github.com/niklabh" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97.01 1.95.14 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                niklabh
+              </a>
+              <a href="https://www.linkedin.com/in/niklabh/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                niklabh
+              </a>
+              <a href="https://x.com/niklabh" target="_blank" rel="noopener" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                @niklabh
+              </a>
+              <a href="mailto:niklabh811@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+              </a>
+            </div>
+          </div>
+
+          <div class="portrait-wrap">
+            <div class="globe" aria-hidden="true">
+              <span class="globe-ring r2"></span>
+              <span class="globe-ring"></span>
+              <span class="globe-ring r3"></span>
+              <canvas id="globe-canvas" width="800" height="800"></canvas>
+            </div>
+            <div class="floating-card fc-1">
+              <div class="ico">R</div>
+              <div class="meta"><b>Rust · Substrate</b><span>Polkadot SDK</span></div>
+            </div>
+            <div class="floating-card fc-2">
+              <div class="ico cyan">W</div>
+              <div class="meta"><b>WebAssembly</b><span>Wasmtime runtimes</span></div>
+            </div>
+            <div class="floating-card fc-3">
+              <div class="ico violet">⬡</div>
+              <div class="meta"><b>Polkassembly</b><span>CTO &amp; Co-founder</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-inner">
+        <span class="marquee-item">Polkassembly <span class="sep">/</span></span>
+        <span class="marquee-item">Parity Technologies <span class="sep">/</span></span>
+        <span class="marquee-item">DFINITY (ICP) <span class="sep">/</span></span>
+        <span class="marquee-item">Polkadot <span class="sep">/</span></span>
+        <span class="marquee-item">Kusama <span class="sep">/</span></span>
+        <span class="marquee-item">Frontier Car Group <span class="sep">/</span></span>
+        <span class="marquee-item">Tokopedia <span class="sep">/</span></span>
+        <span class="marquee-item">Paytm <span class="sep">/</span></span>
+        <span class="marquee-item">Polkadot Blockchain Academy <span class="sep">/</span></span>
+        <!-- duplicate for seamless loop -->
+        <span class="marquee-item">Polkassembly <span class="sep">/</span></span>
+        <span class="marquee-item">Parity Technologies <span class="sep">/</span></span>
+        <span class="marquee-item">DFINITY (ICP) <span class="sep">/</span></span>
+        <span class="marquee-item">Polkadot <span class="sep">/</span></span>
+        <span class="marquee-item">Kusama <span class="sep">/</span></span>
+        <span class="marquee-item">Frontier Car Group <span class="sep">/</span></span>
+        <span class="marquee-item">Tokopedia <span class="sep">/</span></span>
+        <span class="marquee-item">Paytm <span class="sep">/</span></span>
+        <span class="marquee-item">Polkadot Blockchain Academy <span class="sep">/</span></span>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Featured Work</div>
+          <h2 class="section-title">Things I'm building.</h2>
+          <p class="section-desc">A focused set of systems-heavy projects spanning browsers, databases and on-chain governance — all open source, all written primarily in Rust.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal" style="--card-accent: linear-gradient(90deg, #FF2D92, #9B6DFF); --icon-bg: rgba(230,0,122,0.12); --icon-color: #FF2D92;">
+            <div class="project-head">
+              <div class="project-icon">Ox</div>
+              <span class="project-tag">Browser · Runtime</span>
+            </div>
+            <h3>Oxide</h3>
+            <p>A binary-native browser written in Rust that fetches and executes WebAssembly modules directly — no HTML, no JavaScript. Capability-based sandbox built on Wasmtime, Tokio and egui, with strict zero-IO defaults.</p>
+            <div class="project-tech">
+              <span>Rust</span><span>Wasmtime</span><span>Tokio</span><span>egui</span><span>WASI</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/niklabh/oxide" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97.01 1.95.14 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                Source
+              </a>
+              <a href="https://oxide.foundation/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                oxide.foundation
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--card-accent: linear-gradient(90deg, #7AF5FF, #5BE49B); --icon-bg: rgba(122,245,255,0.12); --icon-color: #7AF5FF;">
+            <div class="project-head">
+              <div class="project-icon">Vd</div>
+              <span class="project-tag">Database · Storage</span>
+            </div>
+            <h3>VelociDB</h3>
+            <p>A production-grade embedded database engine in Rust, inspired by SQLite but built for modern hardware. MVCC, async I/O on io_uring, lock-free data structures, SIMD vectorization and NVMe-aware storage.</p>
+            <div class="project-tech">
+              <span>Rust</span><span>MVCC</span><span>io_uring</span><span>SIMD</span><span>B-Tree</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/niklabh/velocidb" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97.01 1.95.14 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                Source
+              </a>
+              <a href="https://crates.io/crates/velocidb" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                crates.io
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--card-accent: linear-gradient(90deg, #E6007A, #FFA940); --icon-bg: rgba(230,0,122,0.12); --icon-color: #FF2D92;">
+            <div class="project-head">
+              <div class="project-icon">⬡</div>
+              <span class="project-tag">Polkadot · Governance</span>
+            </div>
+            <h3>Polkassembly</h3>
+            <p>The flagship governance platform for Polkadot &amp; Kusama. On-chain proposal browsing, discussion, delegation and direct voting. Tracked 1,700+ referenda, $300M+ in treasury decisions and 250K+ participants across 50+ networks.</p>
+            <div class="project-tech">
+              <span>Next.js</span><span>TypeScript</span><span>Polkadot.js</span><span>Substrate</span><span>Rust</span>
+            </div>
+            <div class="project-links">
+              <a href="https://polkassembly.io/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                polkassembly.io
+              </a>
+              <a href="https://github.com/polkassembly/polkassembly-v2" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97.01 1.95.14 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                polkassembly-v2
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--card-accent: linear-gradient(90deg, #9B6DFF, #7AF5FF); --icon-bg: rgba(155,109,255,0.12); --icon-color: #9B6DFF;">
+            <div class="project-head">
+              <div class="project-icon">∆</div>
+              <span class="project-tag">AI · OpenGov</span>
+            </div>
+            <h3>OpenGov Agent</h3>
+            <p>An AI governance agent for Polkadot OpenGov. GPT-4-driven proposal analysis, automated voting with 6× conviction, and delegation flows — applying agentic AI to on-chain decision making at protocol scale.</p>
+            <div class="project-tech">
+              <span>TypeScript</span><span>OpenAI</span><span>Polkadot.js</span><span>OpenGov</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/niklabh/opengov-agent" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97.01 1.95.14 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12v3.14c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                opengov-agent
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Polkadot showcase -->
+    <section id="polkadot">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Polkadot Ecosystem</div>
+          <h2 class="section-title">Six years building <span class="gradient-text">Polkadot</span>.</h2>
+          <p class="section-desc">From core protocol contributions at Parity to founding the ecosystem's flagship governance platform — I've helped shape how millions of DOT and KSM holders coordinate, fund, and govern.</p>
+        </div>
+
+        <div class="polkadot-showcase reveal">
+          <div class="polkadot-grid">
+            <div>
+              <h3 style="font-size: 24px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 8px;">
+                Core contributor &amp; founder.
+              </h3>
+              <p style="color: var(--text-2);">A snapshot of contributions across the stack — from runtime code to ecosystem-defining infrastructure.</p>
+              <ul class="polkadot-list">
+                <li><strong>Polkadot &amp; Kusama launch</strong> — core blockchain infrastructure in Rust/Substrate at Parity (2019–2021).</li>
+                <li><strong>Polkassembly</strong> — founded and architected Polkadot's flagship governance platform; scaled team from 1 → 20 engineers.</li>
+                <li><strong>Inscriptions on Polkadot &amp; Avail</strong> — pioneered Blobscriptions and EVM contract deployments on Kusama.</li>
+                <li><strong>Astar Network</strong> — collaborated on the parachain's core Substrate runtime.</li>
+                <li><strong>OpenGov tooling</strong> — AI-powered proposal analysis, delegated voting, and conviction-aware agents.</li>
+                <li><strong>Polkadot Blockchain Academy</strong> — UC Berkeley cohort, 2023.</li>
+              </ul>
+            </div>
+
+            <div class="polkadot-stats">
+              <div class="stat">
+                <div class="num">1,700+</div>
+                <div class="lbl">Referenda tracked on Polkassembly</div>
+              </div>
+              <div class="stat">
+                <div class="num">$300M+</div>
+                <div class="lbl">Treasury decisions facilitated</div>
+              </div>
+              <div class="stat">
+                <div class="num">250K+</div>
+                <div class="lbl">Governance participants</div>
+              </div>
+              <div class="stat">
+                <div class="num">50+</div>
+                <div class="lbl">Networks supported</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Career</div>
+          <h2 class="section-title">Where I've shipped.</h2>
+          <p class="section-desc">A decade across founding teams, unicorn-scale platforms, and core blockchain infrastructure.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta">
+              <span class="role">CTO &amp; Co-founder</span>
+              <span class="at">· Polkassembly</span>
+              <span class="dates">Aug 2021 — Present · Berlin</span>
+            </div>
+            <p>Founded and architected Polkadot's flagship governance platform. Built Substrate-integrated Rust backends for proposal analysis, validator coordination and delegated voting. Shipped inscription tokens on Polkadot &amp; Avail, EVM deployments on Kusama, and AI agents for OpenGov. Grew the open-source org from 1 to 20 engineers.</p>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta">
+              <span class="role">Senior Developer Relations Engineer</span>
+              <span class="at">· DFINITY (Internet Computer)</span>
+              <span class="dates">Feb 2022 — Nov 2022 · Berlin</span>
+            </div>
+            <p>Supported Rust and Motoko developers building on ICP — DeFi primitives, ledger mechanics, secure canister deployments. Ran the Developer Partner &amp; Grants program and authored governance proposals (including reducing minimum dissolve delays) that directly impacted a $6B+ ecosystem.</p>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta">
+              <span class="role">Principal Engineer</span>
+              <span class="at">· Parity Technologies</span>
+              <span class="dates">Dec 2019 — Jul 2021 · Berlin</span>
+            </div>
+            <p>Core contributions to the launch of Polkadot &amp; Kusama. Implemented validator lifecycle and subnet coordination logic in Rust/Substrate, built wallet integrations across Polkadot.js, and collaborated with parachain teams like Astar on their runtime.</p>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta">
+              <span class="role">Senior Software Engineer</span>
+              <span class="at">· Frontier Car Group</span>
+              <span class="dates">Oct 2017 — Nov 2019 · Berlin</span>
+            </div>
+            <p>Built the used-car marketplace serving emerging markets across Latin America, Africa and Asia. Stack: Node.js, React, MySQL, Elasticsearch.</p>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta">
+              <span class="role">Senior Software Engineer</span>
+              <span class="at">· Tokopedia</span>
+              <span class="dates">Jan 2016 — Sep 2017 · Delhi</span>
+            </div>
+            <p>Built <em>m.tokopedia.com</em> (Tokopedia Lite) — winner of Google's Best PWA award. Founding engineer for the India team; helped set up hiring and dev infrastructure. Stack: Go, Node.js, React.</p>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta">
+              <span class="role">Software Engineer</span>
+              <span class="at">· Paytm</span>
+              <span class="dates">Jun 2013 — Dec 2015 · Delhi</span>
+            </div>
+            <p>Founding engineer on India's leading P2P payment system &amp; superapp. Built Node.js microservices that scaled to 100M+ users with caching, load balancing and minimal downtime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Toolbox</div>
+          <h2 class="section-title">Stack &amp; expertise.</h2>
+          <p class="section-desc">Deep specialization in Rust and systems programming, with full-stack range from low-level storage engines to product UI.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <h4><span class="ico">⛓</span> Blockchain &amp; Distributed</h4>
+            <div class="skill-tags">
+              <span>Substrate</span><span>Polkadot SDK</span><span>FRAME</span><span>WASM</span>
+              <span>ICP</span><span>Solidity</span><span>EVM</span><span>Polkadot.js</span><span>Cryptography</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h4><span class="ico">⚙</span> Languages</h4>
+            <div class="skill-tags">
+              <span>Rust</span><span>TypeScript</span><span>JavaScript</span><span>Go</span><span>Node.js</span><span>Motoko</span><span>Solidity</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h4><span class="ico">▲</span> Frameworks &amp; UI</h4>
+            <div class="skill-tags">
+              <span>Next.js</span><span>React</span><span>Tokio</span><span>Wasmtime</span><span>egui</span><span>Express</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h4><span class="ico">▦</span> Data &amp; Infra</h4>
+            <div class="skill-tags">
+              <span>MySQL</span><span>PostgreSQL</span><span>Redis</span><span>Elasticsearch</span><span>RabbitMQ</span><span>AWS</span><span>Nginx</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h4><span class="ico">⚡</span> Systems</h4>
+            <div class="skill-tags">
+              <span>MVCC</span><span>io_uring</span><span>Lock-free</span><span>SIMD</span><span>NVMe</span><span>Sandboxing</span><span>Capability-based security</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <h4><span class="ico">✦</span> AI &amp; Tooling</h4>
+            <div class="skill-tags">
+              <span>OpenAI / GPT-4</span><span>Agent orchestration</span><span>Local LLM inference</span><span>ComfyUI</span><span>Stable Diffusion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <h2>Let's build something.</h2>
+          <p>Open to collaborating on Rust, systems, and Polkadot ecosystem projects. The fastest way to reach me is email or X.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:niklabh811@gmail.com">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              niklabh811@gmail.com
+            </a>
+            <a class="btn btn-secondary" href="https://x.com/niklabh" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              DM on X
+            </a>
+            <a class="btn btn-secondary" href="https://t.me/niklabh" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+              t.me/niklabh
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>
-    <hr />
-    <nav>
-      <a href="https://github.com/niklabh">Github</a> |
-      <a href="https://www.npmjs.com/~niklabh">Npm</a> |
-      <a href="https://www.linkedin.com/in/niklabh/">Linkedin</a> |
-      <a href="https://www.facebook.com/niklabh">Facebook</a> |
-      <a href="https://www.instagram.com/niklabh/">Instagram</a> |
-      <a href="https://www.youtube.com/channel/UCj-xEmgBk6JDozKyLqhwoRQ">Youtube</a> |
-      <a href="https://medium.com/@nikhilranjan">Medium</a> |
-      <a href="mailto:niklabh811@gmail.com">Mail</a>
-    </nav>
-    <p>Copyright &copy; 2019 Nikhil Ranjan</p>
-  </footer>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44811120-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'UA-44811120-2');
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Nikhil Ranjan · Built with Rust-flavoured care in Berlin.</div>
+        <div class="footer-links">
+          <a href="https://github.com/niklabh" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/niklabh/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://x.com/niklabh" target="_blank" rel="noopener">X</a>
+          <a href="https://medium.com/@nikhilranjan" target="_blank" rel="noopener">Medium</a>
+          <a href="https://www.npmjs.com/~niklabh" target="_blank" rel="noopener">npm</a>
+        </div>
+        <div class="footer-pgp"><a href="/assets/pgp.txt">PGP 0xB5F2384F</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* ---------------- Animated 3D network globe ---------------- */
+    (function () {
+      const canvas = document.getElementById('globe-canvas');
+      if (!canvas) return;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const ctx = canvas.getContext('2d');
+      const DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = Math.max(1, Math.floor(rect.width * DPR));
+        canvas.height = Math.max(1, Math.floor(rect.height * DPR));
+      }
+      resize();
+      const ro = new ResizeObserver(resize);
+      ro.observe(canvas);
+
+      // Distribute N points roughly evenly on a unit sphere using Fibonacci lattice.
+      const N = 320;
+      const points = [];
+      const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+      for (let i = 0; i < N; i++) {
+        const y = 1 - (i / (N - 1)) * 2;
+        const r = Math.sqrt(1 - y * y);
+        const theta = goldenAngle * i;
+        points.push({
+          x: Math.cos(theta) * r,
+          y: y,
+          z: Math.sin(theta) * r,
+          // tiny per-point twinkle phase
+          ph: Math.random() * Math.PI * 2,
+        });
+      }
+
+      // A small set of "highlight" nodes that pulse stronger (like validators).
+      const highlights = new Set();
+      while (highlights.size < 12) highlights.add(Math.floor(Math.random() * N));
+
+      // Pre-compute neighbor edges (great-circle proximity by dot product threshold)
+      const edges = [];
+      const EDGE_DOT = 0.92; // higher = fewer, tighter edges
+      for (let i = 0; i < N; i++) {
+        for (let j = i + 1; j < N; j++) {
+          const a = points[i], b = points[j];
+          const d = a.x * b.x + a.y * b.y + a.z * b.z;
+          if (d > EDGE_DOT) edges.push([i, j]);
+        }
+      }
+
+      // Rotation state — auto-rotate; allow drag to scrub.
+      let rotY = 0.6;
+      let rotX = -0.25;
+      let velY = 0.0035;
+      let velX = 0;
+      let dragging = false;
+      let lastX = 0, lastY = 0;
+      let userInteracted = 0;
+
+      canvas.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        canvas.setPointerCapture(e.pointerId);
+        lastX = e.clientX; lastY = e.clientY;
+        velY = 0; velX = 0;
+        userInteracted = performance.now();
+      });
+      canvas.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        const dx = e.clientX - lastX;
+        const dy = e.clientY - lastY;
+        rotY += dx * 0.005;
+        rotX += dy * 0.005;
+        rotX = Math.max(-1.2, Math.min(1.2, rotX));
+        lastX = e.clientX; lastY = e.clientY;
+        velY = dx * 0.0008;
+        velX = dy * 0.0008;
+      });
+      const endDrag = () => { dragging = false; };
+      canvas.addEventListener('pointerup', endDrag);
+      canvas.addEventListener('pointercancel', endDrag);
+      canvas.addEventListener('pointerleave', endDrag);
+
+      // Color helpers: blend pink → violet → cyan based on parameter [0..1]
+      function colorFor(t, alpha) {
+        // t in [0,1]; piecewise lerp through 3 stops
+        const stops = [
+          [230, 0, 122],   // pink
+          [155, 109, 255], // violet
+          [122, 245, 255], // cyan
+        ];
+        const seg = t < 0.5 ? 0 : 1;
+        const local = (t - seg * 0.5) / 0.5;
+        const a = stops[seg], b = stops[seg + 1];
+        const r = Math.round(a[0] + (b[0] - a[0]) * local);
+        const g = Math.round(a[1] + (b[1] - a[1]) * local);
+        const bl = Math.round(a[2] + (b[2] - a[2]) * local);
+        return `rgba(${r},${g},${bl},${alpha})`;
+      }
+
+      function draw(now) {
+        const w = canvas.width, h = canvas.height;
+        const cx = w / 2, cy = h / 2;
+        const radius = Math.min(w, h) * 0.42;
+
+        // auto-rotate; ease back to autospin a moment after interaction stops
+        if (!dragging) {
+          if (!reduceMotion) {
+            rotY += velY || 0.0035;
+            rotX += velX;
+            // damping
+            velY *= 0.96;
+            velX *= 0.92;
+            // pull rotX gently toward neutral tilt
+            rotX += (-0.18 - rotX) * 0.005;
+          }
+        }
+
+        const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+        const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+
+        // Project all points
+        const proj = new Array(N);
+        for (let i = 0; i < N; i++) {
+          const p = points[i];
+          // rotate around Y
+          let x1 = p.x * cosY + p.z * sinY;
+          let z1 = -p.x * sinY + p.z * cosY;
+          let y1 = p.y;
+          // rotate around X
+          let y2 = y1 * cosX - z1 * sinX;
+          let z2 = y1 * sinX + z1 * cosX;
+          // simple perspective
+          const persp = 1 / (1.6 - z2 * 0.5); // z2 in [-1,1]
+          proj[i] = {
+            sx: cx + x1 * radius * persp,
+            sy: cy + y2 * radius * persp,
+            z: z2,
+            depth: (z2 + 1) / 2, // 0 = back, 1 = front
+          };
+        }
+
+        ctx.clearRect(0, 0, w, h);
+
+        // soft underglow
+        const grad = ctx.createRadialGradient(cx, cy, radius * 0.2, cx, cy, radius * 1.15);
+        grad.addColorStop(0, 'rgba(230,0,122,0.10)');
+        grad.addColorStop(0.6, 'rgba(155,109,255,0.05)');
+        grad.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius * 1.15, 0, Math.PI * 2);
+        ctx.fill();
+
+        // edges — only draw when both endpoints are mostly on the visible hemisphere
+        ctx.lineWidth = 1 * DPR;
+        for (let k = 0; k < edges.length; k++) {
+          const [i, j] = edges[k];
+          const a = proj[i], b = proj[j];
+          if (a.z < -0.15 && b.z < -0.15) continue; // hidden
+          const t = (a.depth + b.depth) / 2;
+          // edge alpha falls off when behind
+          const alpha = Math.max(0, Math.min(0.5, (t - 0.2) * 0.6));
+          if (alpha <= 0.02) continue;
+          ctx.strokeStyle = colorFor(t, alpha);
+          ctx.beginPath();
+          ctx.moveTo(a.sx, a.sy);
+          ctx.lineTo(b.sx, b.sy);
+          ctx.stroke();
+        }
+
+        // nodes — sort back to front for proper occlusion
+        const order = new Array(N);
+        for (let i = 0; i < N; i++) order[i] = i;
+        order.sort((a, b) => proj[a].z - proj[b].z);
+
+        const tnow = now * 0.001;
+        for (let oi = 0; oi < N; oi++) {
+          const i = order[oi];
+          const p = proj[i];
+          const t = p.depth;
+          const isHL = highlights.has(i);
+          const twinkle = 0.5 + 0.5 * Math.sin(tnow * 1.6 + points[i].ph);
+          const baseR = (isHL ? 2.2 : 1.2) * DPR * (0.7 + t * 0.9);
+          const r = baseR * (isHL ? (0.85 + 0.35 * twinkle) : 1);
+          const alpha = (isHL ? 0.55 : 0.35) + t * 0.45;
+
+          if (isHL) {
+            // halo
+            const halo = ctx.createRadialGradient(p.sx, p.sy, 0, p.sx, p.sy, r * 6);
+            halo.addColorStop(0, colorFor(t, 0.55 * twinkle));
+            halo.addColorStop(1, 'rgba(0,0,0,0)');
+            ctx.fillStyle = halo;
+            ctx.beginPath();
+            ctx.arc(p.sx, p.sy, r * 6, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.fillStyle = colorFor(t, alpha);
+          ctx.beginPath();
+          ctx.arc(p.sx, p.sy, r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // crisp outer arc (limb)
+        ctx.lineWidth = 1 * DPR;
+        ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.stroke();
+
+        if (!reduceMotion) requestAnimationFrame(draw);
+      }
+
+      if (reduceMotion) {
+        // draw a single static frame
+        draw(performance.now());
+      } else {
+        requestAnimationFrame(draw);
+      }
+    })();
   </script>
 </body>
 

@@ -1,0 +1,164 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+%  Nikhil Ranjan — Resume (compiles with XeLaTeX or LuaLaTeX)
+% ============================================================
+
+\usepackage[margin=0.7in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{microtype}
+
+\pagestyle{empty}
+
+% --- Color scheme: Polkadot-inspired magenta + slate ---------
+\definecolor{primary}{HTML}{E6007A}
+\definecolor{ink}{HTML}{1A1A2E}
+\definecolor{muted}{HTML}{555566}
+\definecolor{rule}{HTML}{D8D8E0}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary,
+    citecolor=primary,
+    pdftitle={Nikhil Ranjan — Resume},
+    pdfauthor={Nikhil Ranjan}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\color{ink}
+
+% --- Section formatting ------------------------------------
+\titleformat{\section}
+  {\large\bfseries\color{primary}} % Removed \MakeUppercase from here
+  {}{0em}{}
+  [\vspace{-4pt}\color{rule}\titlerule\vspace{2pt}]
+
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% --- Custom helpers ----------------------------------------
+\newcommand{\role}[4]{%
+    \textbf{#1} \hfill {\color{muted}\textit{#4}}\\
+    {\color{primary}\textit{#2}} \hfill {\color{muted}\small #3}\\
+    \vspace{-2pt}
+}
+
+\newcommand{\edu}[5]{%
+    \textbf{#1} \hfill {\color{muted}\small #2}\\
+    \textit{#3} \hfill {\color{muted}\small #4}\\
+    {\footnotesize #5}\\
+    \vspace{4pt}
+}
+
+% Tight bullet list
+\newenvironment{bullets}{%
+  \begin{itemize}[leftmargin=14pt, itemsep=1pt, parsep=0pt, topsep=2pt]%
+}{\end{itemize}}
+
+\begin{document}
+
+% ============================================================
+%  Header
+% ============================================================
+\begin{center}
+    {\Huge\bfseries Nikhil Ranjan}\\[2pt]
+    {\color{muted}\small Software Architect | Rust | Polkadot | Distributed Systems}\\[6pt]
+    \small
+    \faMapMarker*\ Berlin, Germany \quad
+    \faEnvelope\ \href{mailto:niklabh811@gmail.com}{nikhil@polkassembly.io} \quad
+    \faGlobe\ \href{https://nikhilranjan.com}{niklabh.github.io} \\[2pt]
+    \faGithub\ \href{https://github.com/niklabh}{github.com/niklabh} \quad
+    \faLinkedin\ \href{https://www.linkedin.com/in/niklabh/}{linkedin.com/in/niklabh} \quad
+    \faTwitter\ \href{https://x.com/niklabh}{x.com/niklabh}
+\end{center}
+
+% ============================================================
+%  Summary
+% ============================================================
+\section{Summary}
+Software architect with 12+ years building scalable, decentralized systems --- from founding-engineer roles at Paytm and Tokopedia to core Polkadot/Kusama infrastructure at Parity. Currently CTO and co-founder of \href{https://polkassembly.io}{\textbf{Polkassembly}}, the flagship governance platform for Polkadot \& Kusama. Deep expertise in Rust, Substrate, and WebAssembly runtimes. Creator of \href{https://github.com/niklabh/oxide}{\textbf{Oxide}} and \href{https://github.com/niklabh/velocidb}{\textbf{VelociDB}}.
+
+% ============================================================
+%  Experience
+% ============================================================
+\section{Experience}
+
+\role{\href{https://polkassembly.io/}{Polkassembly}}{CTO \& Co-founder}{Aug 2021 -- Present}{Berlin}
+\begin{bullets}
+    \item Founded and architected Polkadot's flagship governance platform: 1,700+ referenda tracked, \$300M+ in treasury decisions facilitated, 250K+ participants.
+    \item Built Rust + Substrate backends for real-time proposal analysis, validator coordination and delegated voting; integrated AI-assisted analysis and autonomous voting agents.
+    \item Shipped full-stack governance flows in Next.js, TypeScript and Polkadot.js.
+    \item Pioneered inscription tokens (Blobscriptions) and EVM contract deployments on Kusama.
+    \item Grew the open-source organization from 1 to 20 engineers; led architecture, hiring and code review.
+\end{bullets}
+
+\role{DFINITY Foundation}{Senior Developer Relations Engineer}{Feb 2022 -- Nov 2022}{Berlin}
+\begin{bullets}
+    \item Supported Rust and Motoko developers building DeFi primitives and secure canister deployments on the Internet Computer.
+    \item Ran the Developer Partner \& Grants program; evaluated and funded Rust-based protocol enhancements.
+    \item Authored governance proposals that expanded staking participation in a \$6B+ ecosystem.
+\end{bullets}
+
+\role{Parity Technologies}{Principal Engineer}{Dec 2019 -- Jul 2021}{Berlin}
+\begin{bullets}
+    \item Core contributor to the launch of Polkadot and Kusama: shipped runtime/ledger code in Rust + Substrate.
+    \item Implemented validator lifecycle, subnet coordination logic, and staking flows hardened for adversarial environments.
+    \item Collaborated with parachain teams (e.g., Astar Network) on Substrate runtime work.
+\end{bullets}
+
+\role{Frontier Car Group}{Senior Software Engineer}{Oct 2017 -- Nov 2019}{Berlin}
+\begin{bullets}
+    \item Built used-car marketplaces serving emerging markets across LATAM, Africa and Asia.
+\end{bullets}
+
+\role{Tokopedia}{Senior Software Engineer}{Jan 2016 -- Sep 2017}{Delhi}
+\begin{bullets}
+    \item Created \textit{m.tokopedia.com} (Tokopedia Lite) --- winner of Google's Best PWA award.
+\end{bullets}
+
+\role{Paytm}{Software Engineer}{Jun 2013 -- Dec 2015}{Delhi}
+\begin{bullets}
+    \item Founding engineer on India's leading P2P payments platform (300M+ users); scaled microservices to 100M+ users.
+\end{bullets}
+
+% ============================================================
+%  Selected Projects
+% ============================================================
+\section{Selected Open-Source Projects}
+
+\textbf{\href{https://github.com/niklabh/oxide}{Oxide}} \hfill \textit{A binary-native browser in Rust.}\\
+A reimagining of the web where pages are WebAssembly modules, not HTML/JS. Capability-based sandbox built on Wasmtime, Tokio and egui.
+
+\vspace{4pt}
+\textbf{\href{https://github.com/niklabh/velocidb}{VelociDB}} \hfill \textit{A modern embedded database engine in Rust.}\\
+SQLite-inspired storage engine optimized for modern hardware: MVCC, async I/O on io\_uring, and SIMD vectorization.
+
+% ============================================================
+%  Education
+% ============================================================
+\section{Education}
+
+\edu{Polkadot Blockchain Academy}{2023}{UC Berkeley, California}{}{Cryptography, Substrate, FRAME, Polkadot SDK, WebAssembly, decentralized networks.}
+
+\edu{Bachelor of Technology}{2009 -- 2013}{GGSIPU, Delhi}{GPA: 7.5/10}{Applied Mathematics, Data Structures, Algorithms, Distributed Computing, Cryptography.}
+
+% ============================================================
+%  Skills
+% ============================================================
+\section{Skills}
+
+\begin{bullets}
+    \item \textbf{Languages:} Rust (expert), TypeScript, JavaScript, Go, Motoko, Solidity.
+    \item \textbf{Blockchain \& Distributed:} Substrate, FRAME, Polkadot SDK, WASM, ICP, EVM, Staking Design, Cryptography.
+    \item \textbf{Systems:} MVCC, io\_uring, Lock-free data structures, SIMD, NVMe, Sandboxing, Performance Engineering.
+    \item \textbf{Web \& Data:} Next.js, React, PostgreSQL, Redis, Elasticsearch, AWS, Docker, CI/CD.
+    \item \textbf{AI:} OpenAI/GPT-4 Agents, Local LLM inference, ComfyUI, Stable Diffusion.
+\end{bullets}
+
+\end{document}
