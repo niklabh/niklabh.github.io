@@ -1,6 +1,6 @@
-# nikhilranjan.com
+# niklabh.github.io
 
-Source for [nikhilranjan.com](https://nikhilranjan.com) — the personal site
+Source for [niklabh.github.io](https://niklabh.github.io) — the personal site
 and portfolio of **Nikhil Ranjan** (`@niklabh`).
 
 A single-file, static landing page (no build step) hosted on GitHub Pages.
