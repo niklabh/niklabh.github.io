@@ -395,6 +395,53 @@
     .project-links a:hover { color: var(--pink-2); }
     .project-links svg { width: 14px; height: 14px; }
 
+    /* Articles */
+    .articles-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+    }
+    @media (max-width: 800px) { .articles-grid { grid-template-columns: 1fr; } }
+
+    .article-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .article-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--gradient);
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .article-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-4px);
+      background: var(--surface-2);
+    }
+    .article-card:hover::before { opacity: 1; }
+    .article-card .article-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; color: var(--text-3);
+      margin-bottom: 10px;
+    }
+    .article-card h3 {
+      font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
+      margin-bottom: 10px; line-height: 1.3;
+    }
+    .article-card p {
+      color: var(--text-2); font-size: 14px; line-height: 1.6;
+      margin-bottom: 16px; flex: 1;
+    }
+    .article-card .article-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--pink-2); font-size: 14px; font-weight: 500;
+    }
+    .article-card .article-link:hover { color: var(--pink); }
+    .article-card .article-link svg { width: 14px; height: 14px; }
+
     /* Polkadot showcase */
     .polkadot-showcase {
       background: linear-gradient(135deg, rgba(230,0,122,0.08), rgba(155,109,255,0.04));
@@ -561,6 +608,7 @@
       </a>
       <div class="nav-links">
         <a href="#projects">Projects</a>
+        <a href="#articles">Articles</a>
         <a href="#polkadot">Polkadot</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
@@ -756,6 +804,69 @@
                 opengov-agent
               </a>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section id="articles">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Writings</div>
+          <h2 class="section-title">Recent articles &amp; essays.</h2>
+          <p class="section-desc">Deep dives into systems engineering, browser architecture, AI-native programming, and database design — published as long-form articles on X.</p>
+        </div>
+
+        <div class="articles-grid">
+          <article class="article-card reveal">
+            <div class="article-date">Apr 18, 2026</div>
+            <h3>Building for Oxide: A Developer's Journey into the Binary-First Browser</h3>
+            <p>A comprehensive walkthrough of Oxide's architecture and SDK: immediate-mode rendering, capability-based sandboxing, GPU compute, WebRTC, media playback, and patterns for building real applications without HTML, CSS, or a DOM.</p>
+            <a class="article-link" href="https://x.com/niklabh/status/2045583700327268537" target="_blank" rel="noopener">
+              Read on X
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-date">Mar 19, 2026</div>
+            <h3>HTML Was a Miracle. Now It's a Bottleneck. What if we started over?</h3>
+            <p>A manifesto on why HTML is the wrong abstraction for the modern internet, and how Oxide — a binary-first browser that runs WebAssembly instead of HTML — rethinks application delivery from the ground up with capability-based security.</p>
+            <a class="article-link" href="https://x.com/niklabh/status/2034525537759383806" target="_blank" rel="noopener">
+              Read on X
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-date">Mar 14, 2026</div>
+            <h3>Architectural Feasibility of Autonomous Scientific Discovery and AI Peer Review System</h3>
+            <p>An analysis of whether fully autonomous AI systems can execute the entire scientific lifecycle — from hypothesis generation and experimentation to manuscript authoring and peer review — supported by knowledge graphs and semantic novelty detection.</p>
+            <a class="article-link" href="https://x.com/niklabh/status/2032882205970804967" target="_blank" rel="noopener">
+              Read on X
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-date">Feb 22, 2026</div>
+            <h3>Architectural Paradigms for LLM-Native Programming: Designing a Programming Language for AI</h3>
+            <p>Arguing that human-readable languages are the CISC of the AI era, this paper proposes Neural-RISC: a machine-native programming language designed for LLM compilation, with token-vocabulary alignment, graph-native execution, and logit-masking for type safety.</p>
+            <a class="article-link" href="https://x.com/niklabh/status/2025551224901111999" target="_blank" rel="noopener">
+              Read on X
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-date">Nov 10, 2025</div>
+            <h3>VelociDB: Blueprint for the Modern Embedded Database</h3>
+            <p>A comprehensive architectural blueprint for a modern embedded database engine in Rust, covering MVCC concurrency, io_uring async I/O, PMEM integration, SIMD vectorized execution, and CRDT-based distributed synchronization.</p>
+            <a class="article-link" href="https://x.com/niklabh/status/1988011368369582353" target="_blank" rel="noopener">
+              Read on X
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
           </article>
         </div>
       </div>
