@@ -442,6 +442,22 @@
     .article-card .article-link:hover { color: var(--pink); }
     .article-card .article-link svg { width: 14px; height: 14px; }
 
+    .book-cover {
+      display: block;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      max-height: 280px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      background: var(--surface-2);
+    }
+    .article-card:hover .book-cover {
+      border-color: var(--border-strong);
+    }
+
     /* Polkadot showcase */
     .polkadot-showcase {
       background: linear-gradient(135deg, rgba(230,0,122,0.08), rgba(155,109,255,0.04));
@@ -609,6 +625,7 @@
       <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#articles">Articles</a>
+        <a href="#books">Books</a>
         <a href="#papers">Papers</a>
         <a href="#polkadot">Polkadot</a>
         <a href="#experience">Experience</a>
@@ -821,6 +838,16 @@
 
         <div class="articles-grid">
           <article class="article-card reveal">
+            <div class="article-date">Jul 24, 2026</div>
+            <h3>I Built a Database in Rust. The Database Built Character.</h3>
+            <p>A personal account of building VelociDB — a modern embedded database engine in Rust — and what the hard edges of storage engines, concurrency, and systems design teach you about engineering judgment.</p>
+            <a class="article-link" href="https://x.com/niklabh/status/2080651376942784656" target="_blank" rel="noopener">
+              Read on X
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+
+          <article class="article-card reveal">
             <div class="article-date">Apr 18, 2026</div>
             <h3>Building for Oxide: A Developer's Journey into the Binary-First Browser</h3>
             <p>A comprehensive walkthrough of Oxide's architecture and SDK: immediate-mode rendering, capability-based sandboxing, GPU compute, WebRTC, media playback, and patterns for building real applications without HTML, CSS, or a DOM.</p>
@@ -866,6 +893,45 @@
             <p>A comprehensive architectural blueprint for a modern embedded database engine in Rust, covering MVCC concurrency, io_uring async I/O, PMEM integration, SIMD vectorized execution, and CRDT-based distributed synchronization.</p>
             <a class="article-link" href="https://x.com/niklabh/status/1988011368369582353" target="_blank" rel="noopener">
               Read on X
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books -->
+    <section id="books">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Books</div>
+          <h2 class="section-title">Technical books on Amazon.</h2>
+          <p class="section-desc">Deep technical guides for writing secure, production-ready smart contracts — from ink! on Polkadot to Motoko on the Internet Computer.</p>
+        </div>
+
+        <div class="articles-grid">
+          <article class="article-card reveal">
+            <a href="https://www.amazon.com/dp/B0G3M492G7" target="_blank" rel="noopener">
+              <img class="book-cover" src="/images/motoko.jpg" alt="Cover of Mastering Motoko" width="400" height="600" loading="lazy" />
+            </a>
+            <div class="article-date">Nov 23, 2025 · Kindle</div>
+            <h3>Mastering Motoko: The Definitive Guide to Decentralized Application Engineering on the Internet Computer</h3>
+            <p>An authoritative manual for Motoko and ICP's unified World Computer model — covering identity, tokenomics, ledger integration, asynchronous messaging safety, orthogonal persistence, and a full OpenPatron dapp build.</p>
+            <a class="article-link" href="https://www.amazon.com/dp/B0G3M492G7" target="_blank" rel="noopener">
+              View on Amazon
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+
+          <article class="article-card reveal">
+            <a href="https://www.amazon.com/dp/B0FM8L1WQH" target="_blank" rel="noopener">
+              <img class="book-cover" src="/images/ink.jpg" alt="Cover of Mastering ink!" width="400" height="600" loading="lazy" />
+            </a>
+            <div class="article-date">Aug 12, 2025 · Kindle</div>
+            <h3>Mastering ink!: Building Production-Ready Smart Contracts</h3>
+            <p>A comprehensive guide to ink!, the Rust-based eDSL for smart contracts on polkadot-sdk chains — from fundamentals and ERC-20 patterns through testing, debugging, and production deployment across the Polkadot ecosystem.</p>
+            <a class="article-link" href="https://www.amazon.com/dp/B0FM8L1WQH" target="_blank" rel="noopener">
+              View on Amazon
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
           </article>

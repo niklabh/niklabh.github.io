@@ -1,2 +1,26 @@
 node_modules
 .DS_Store
+
+# LaTeX build artifacts (keep .tex and .pdf)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+*.ps
+*.bak
+*.tmp
+*~
