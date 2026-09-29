@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://niklabh.github.io/sitemap.xml
