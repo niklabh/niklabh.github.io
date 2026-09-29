@@ -35,3 +35,11 @@ xelatex "Nikhil Ranjan Resume.tex"
 - GitHub: <https://github.com/niklabh>
 - LinkedIn: <https://www.linkedin.com/in/niklabh/>
 - X: <https://x.com/niklabh>
+
+## Icon credits
+
+- UI icons: [Solar](https://github.com/480-Design/Solar-Icon-Set) (CC BY 4.0), inlined as an SVG sprite
+- Brand glyphs (GitHub, LinkedIn, X, Telegram, Medium, npm): [Remix Icon](https://github.com/Remix-Design/RemixIcon) (Apache 2.0)
+- Technology logos in `images/icons/`: [gilbarbara/logos](https://github.com/gilbarbara/logos) (CC0),
+  with Polkadot, Substrate, Tokio and Express from [Simple Icons](https://github.com/simple-icons/simple-icons) (CC0)
+  and Kusama from [Web3 Icons](https://github.com/0xa3k5/web3icons) (MIT)
