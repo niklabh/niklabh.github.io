@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Nikhil Ranjan — Rust &amp; Systems Architect · CTO, Polkassembly</title>
-  <meta name="description" content="Berlin-based software architect and CTO of Polkassembly, ex-Parity and ex-DFINITY. Creator of Oxide and VelociDB; author of books on Rust, ink! and Motoko." />
+  <meta name="description" content="Berlin-based software architect and CTO of Polkassembly, ex-Parity and ex-DFINITY. Substrate runtimes, on-chain exchange logic, Oxide and VelociDB." />
   <meta name="author" content="Nikhil Ranjan" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#FAFAF7" />
@@ -61,7 +61,7 @@
           "@id": "https://niklabh.github.io/#profile",
           "url": "https://niklabh.github.io/",
           "name": "Nikhil Ranjan — Rust & Systems Architect · CTO, Polkassembly",
-          "description": "Berlin-based software architect and CTO of Polkassembly, ex-Parity and ex-DFINITY. Creator of Oxide and VelociDB; author of books on Rust, ink! and Motoko.",
+          "description": "Berlin-based software architect and CTO of Polkassembly, ex-Parity and ex-DFINITY. Substrate runtimes, on-chain exchange logic, Oxide and VelociDB.",
           "isPartOf": {
             "@id": "https://niklabh.github.io/#website"
           },
@@ -69,7 +69,7 @@
             "@id": "https://niklabh.github.io/#person"
           },
           "inLanguage": "en",
-          "dateModified": "2026-09-29"
+          "dateModified": "2026-10-23"
         },
         {
           "@type": "Person",
@@ -100,7 +100,9 @@
             "Database engines",
             "Distributed systems",
             "TypeScript",
-            "Internet Computer"
+            "Internet Computer",
+            "Automated market makers",
+            "On-chain exchange"
           ],
           "sameAs": [
             "https://github.com/niklabh",
@@ -185,6 +187,16 @@
           "codeRepository": "https://github.com/niklabh/velocidb",
           "url": "https://crates.io/crates/velocidb",
           "programmingLanguage": "Rust",
+          "author": {
+            "@id": "https://niklabh.github.io/#person"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Vulture Finance",
+          "description": "On-chain stableswap AMM: swap execution, per-asset liquidity and liability accounting, and coverage-ratio pricing.",
+          "url": "https://vulture.finance",
+          "applicationCategory": "FinanceApplication",
           "author": {
             "@id": "https://niklabh.github.io/#person"
           }
@@ -663,7 +675,7 @@
 
         <p class="hero-bio">
           I'm <strong>Nikhil Ranjan</strong>, CTO &amp; co-founder of <strong>Polkassembly</strong>, previously at <strong>Parity</strong> and <strong>DFINITY</strong>.
-          I write a lot of Rust, ship in the open, and care about systems engineering, sandboxed runtimes and on-chain governance.
+          I write Rust for Substrate runtimes, on-chain exchange logic, and systems like VelociDB.
         </p>
 
         <div class="hero-actions">
@@ -710,6 +722,19 @@
             <div class="project-links">
               <a href="https://crates.io/crates/velocidb" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="link">crates.io</span> <svg class="arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
               <a href="https://github.com/niklabh/velocidb" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg><span class="link">Source</span> <svg class="arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <h3>Vulture Finance</h3>
+              <span class="kind">Stableswap AMM</span>
+            </div>
+            <p>On-chain stableswap execution: a swap updates per-asset liquidity and liabilities, and the price comes from the pool's coverage ratio. Deposits are single-sided, so a withdrawal returns the same asset.</p>
+            <div class="chips"><span class="chip">AMM</span><span class="chip">Stableswap</span><span class="chip">DeFi</span></div>
+            <div class="project-links">
+              <a href="https://vulture.finance" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="link">vulture.finance</span> <svg class="arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              <a href="https://github.com/vulturefi" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg><span class="link">GitHub</span> <svg class="arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
             </div>
           </article>
 
@@ -882,10 +907,10 @@
           </div>
 
           <ul class="points">
-            <li><strong>Polkadot &amp; Kusama launch</strong>Core blockchain infrastructure in Rust/Substrate at Parity (2019–2021).</li>
+            <li><strong>Polkadot &amp; Kusama launch</strong>Substrate runtime at Parity, including the governance pallet, validator lifecycle, and staking (2019–2021).</li>
             <li><strong>Polkassembly</strong>Founded and architected Polkadot's flagship governance platform; scaled the team from 1 to 20 engineers.</li>
             <li><strong>Inscriptions on Polkadot &amp; Avail</strong>Pioneered Blobscriptions and EVM contract deployments on Kusama.</li>
-            <li><strong>Astar Network</strong>Collaborated on the parachain's core Substrate runtime.</li>
+            <li><strong>Astar Network</strong>Parachain runtime, astar.js, the gas estimation API and faucet, and ArthSwap's AMM.</li>
             <li><strong>OpenGov tooling</strong>AI-powered proposal analysis, delegated voting, and conviction-aware agents.</li>
             <li><strong>Polkadot Blockchain Academy</strong>UC Berkeley cohort, 2023.</li>
           </ul>
@@ -903,10 +928,17 @@
 
         <ol class="jobs">
           <li class="job">
-            <div class="when">2021 — Present<br>Berlin</div>
+            <div class="when">2023 — Present<br>Berlin</div>
             <div>
               <h3>CTO &amp; Co-founder <span>· Polkassembly</span></h3>
-              <p>Founded and architected Polkadot's flagship governance platform. Built Substrate-integrated Rust backends for proposal analysis, validator coordination and delegated voting. Shipped inscription tokens on Polkadot &amp; Avail, EVM deployments on Kusama, and AI agents for OpenGov. Grew the open-source org from 1 to 20 engineers.</p>
+              <p>Founded and architected Polkadot's flagship governance platform. Built Rust and Substrate backends for proposal and account state, validator coordination, delegated voting, and transaction submission. Shipped inscription tokens on Polkadot &amp; Avail, EVM deployments on Kusama, and AI agents for OpenGov. Grew the open-source org from 1 to 20 engineers.</p>
+            </div>
+          </li>
+          <li class="job">
+            <div class="when">2022 — 2023<br>Berlin</div>
+            <div>
+              <h3>Senior Protocol Engineer <span>· Astar</span></h3>
+              <p>Developed the parachain runtime and governance logic in Rust and Substrate. Worked on astar.js, astar apps, astar base, and astar portal, and on the gas estimation API and faucet. Worked with ArthSwap on their AMM: constant-product pools, swap execution, and liquidity accounting.</p>
             </div>
           </li>
           <li class="job">
@@ -920,7 +952,7 @@
             <div class="when">2019 — 2021<br>Berlin</div>
             <div>
               <h3>Principal Engineer <span>· Parity Technologies</span></h3>
-              <p>Core contributions to the launch of Polkadot &amp; Kusama. Implemented validator lifecycle and subnet coordination logic in Rust/Substrate, built wallet integrations across Polkadot.js, and collaborated with parachain teams like Astar on their runtime.</p>
+              <p>Core contributions to the launch of Polkadot &amp; Kusama. Implemented the governance pallet's state transitions — proposals, referenda, voting, and scheduled enactment — plus validator lifecycle and staking flows for account-state updates in Rust/Substrate.</p>
             </div>
           </li>
           <li class="job">
@@ -958,7 +990,7 @@
 
         <dl class="skills">
           <div class="skill"><dt>Languages</dt><dd class="tools"><span class="tool"><img src="/images/icons/rust.svg" alt="" width="18" height="18">Rust</span><span class="tool"><img src="/images/icons/typescript.svg" alt="" width="18" height="18">TypeScript</span><span class="tool"><img src="/images/icons/javascript.svg" alt="" width="18" height="18">JavaScript</span><span class="tool"><img src="/images/icons/go.svg" alt="" width="18" height="18">Go</span><span class="tool"><img src="/images/icons/nodejs.svg" alt="" width="18" height="18">Node.js</span><span class="tool"><img src="/images/icons/icp.svg" alt="" width="18" height="18">Motoko</span><span class="tool"><img src="/images/icons/solidity.svg" alt="" width="18" height="18">Solidity</span></dd></div>
-          <div class="skill"><dt>Blockchain &amp; distributed</dt><dd class="tools"><span class="tool"><img src="/images/icons/substrate.svg" alt="" width="18" height="18">Substrate</span><span class="tool"><img src="/images/icons/polkadot.svg" alt="" width="18" height="18">Polkadot SDK</span><span class="tool"><img src="/images/icons/kusama.svg" alt="" width="18" height="18">Kusama</span><span class="tool"><img src="/images/icons/icp.svg" alt="" width="18" height="18">ICP</span><span class="tool"><img src="/images/icons/ethereum.svg" alt="" width="18" height="18">EVM</span><span class="tool"><img src="/images/icons/webassembly.svg" alt="" width="18" height="18">WebAssembly</span><span class="tool"><img src="/images/icons/polkadot.svg" alt="" width="18" height="18">Polkadot.js</span></dd></div>
+          <div class="skill"><dt>Blockchain &amp; distributed</dt><dd class="tools"><span class="tool"><img src="/images/icons/substrate.svg" alt="" width="18" height="18">Substrate</span><span class="tool"><img src="/images/icons/polkadot.svg" alt="" width="18" height="18">Polkadot SDK</span><span class="tool"><img src="/images/icons/kusama.svg" alt="" width="18" height="18">Kusama</span><span class="tool"><img src="/images/icons/icp.svg" alt="" width="18" height="18">ICP</span><span class="tool"><img src="/images/icons/ethereum.svg" alt="" width="18" height="18">EVM</span><span class="tool plain">AMM</span><span class="tool plain">Stableswap</span><span class="tool"><img src="/images/icons/webassembly.svg" alt="" width="18" height="18">WebAssembly</span><span class="tool"><img src="/images/icons/polkadot.svg" alt="" width="18" height="18">Polkadot.js</span></dd></div>
           <div class="skill"><dt>Frameworks &amp; runtimes</dt><dd class="tools"><span class="tool"><img src="/images/icons/nextjs.svg" alt="" width="18" height="18">Next.js</span><span class="tool"><img src="/images/icons/react.svg" alt="" width="18" height="18">React</span><span class="tool"><img src="/images/icons/express.svg" alt="" width="18" height="18">Express</span><span class="tool"><img src="/images/icons/tokio.svg" alt="" width="18" height="18">Tokio</span><span class="tool plain">Wasmtime</span><span class="tool plain">egui</span></dd></div>
           <div class="skill"><dt>Data &amp; infrastructure</dt><dd class="tools"><span class="tool"><img src="/images/icons/postgresql.svg" alt="" width="18" height="18">PostgreSQL</span><span class="tool"><img src="/images/icons/mysql.svg" alt="" width="18" height="18">MySQL</span><span class="tool"><img src="/images/icons/redis.svg" alt="" width="18" height="18">Redis</span><span class="tool"><img src="/images/icons/elasticsearch.svg" alt="" width="18" height="18">Elasticsearch</span><span class="tool"><img src="/images/icons/rabbitmq.svg" alt="" width="18" height="18">RabbitMQ</span><span class="tool"><img src="/images/icons/aws.svg" alt="" width="18" height="18">AWS</span><span class="tool"><img src="/images/icons/nginx.svg" alt="" width="18" height="18">Nginx</span></dd></div>
           <div class="skill"><dt>AI &amp; tooling</dt><dd class="tools"><span class="tool"><img src="/images/icons/openai.svg" alt="" width="18" height="18">OpenAI / GPT-4</span><span class="tool"><img src="/images/icons/stability.svg" alt="" width="18" height="18">Stable Diffusion</span><span class="tool plain">ComfyUI</span><span class="tool plain">Agent orchestration</span><span class="tool plain">Local LLM inference</span></dd></div>
