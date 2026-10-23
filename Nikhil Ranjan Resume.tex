@@ -4,7 +4,7 @@
 %  Nikhil Ranjan — Resume (compiles with XeLaTeX or LuaLaTeX)
 % ============================================================
 
-\usepackage[margin=0.7in]{geometry}
+\usepackage[margin=0.62in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
@@ -40,7 +40,7 @@
   {}{0em}{}
   [\vspace{-4pt}\color{rule}\titlerule\vspace{2pt}]
 
-\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\section}{0pt}{6pt}{2pt}
 
 % --- Custom helpers ----------------------------------------
 \newcommand{\role}[4]{%
@@ -53,12 +53,12 @@
     \textbf{#1} \hfill {\color{muted}\small #2}\\
     \textit{#3} \hfill {\color{muted}\small #4}\\
     {\footnotesize #5}\\
-    \vspace{4pt}
+    \vspace{1pt}
 }
 
 % Tight bullet list
 \newenvironment{bullets}{%
-  \begin{itemize}[leftmargin=14pt, itemsep=1pt, parsep=0pt, topsep=2pt]%
+  \begin{itemize}[leftmargin=14pt, itemsep=0.5pt, parsep=0pt, topsep=1pt]%
 }{\end{itemize}}
 
 \begin{document}
@@ -67,11 +67,11 @@
 %  Header
 % ============================================================
 \begin{center}
-    {\Huge\bfseries Nikhil Ranjan}\\[2pt]
-    {\color{muted}\small Software Architect | Rust | Polkadot | Distributed Systems}\\[6pt]
+    {\huge\bfseries Nikhil Ranjan}\\[1pt]
+    {\color{muted}\small Rust Systems Engineer | Substrate Runtimes | On-chain Exchange}\\[4pt]
     \small
     \faMapMarker*\ Berlin, Germany \quad
-    \faEnvelope\ \href{mailto:niklabh811@gmail.com}{nikhil@polkassembly.io} \quad
+    \faEnvelope\ \href{mailto:niklabh811@gmail.com}{niklabh811@gmail.com} \quad
     \faGlobe\ \href{https://niklabh.github.io}{niklabh.github.io} \\[2pt]
     \faGithub\ \href{https://github.com/niklabh}{github.com/niklabh} \quad
     \faLinkedin\ \href{https://www.linkedin.com/in/niklabh/}{linkedin.com/in/niklabh} \quad
@@ -82,62 +82,56 @@
 %  Summary
 % ============================================================
 \section{Summary}
-Software architect with 12+ years building scalable, decentralized systems --- from founding-engineer roles at Paytm and Tokopedia to core Polkadot/Kusama infrastructure at Parity. Currently CTO and co-founder of \href{https://polkassembly.io}{\textbf{Polkassembly}}, the flagship governance platform for Polkadot \& Kusama. Deep expertise in Rust, Substrate, and WebAssembly runtimes. Creator of \href{https://github.com/niklabh/oxide}{\textbf{Oxide}} and \href{https://github.com/niklabh/velocidb}{\textbf{VelociDB}}.
+Rust systems engineer with 12+ years shipping production infrastructure. Contributed to the Polkadot and Kusama launches at Parity, including Substrate governance-pallet state transitions. Built stableswap AMM logic for \href{https://vulture.finance}{\textbf{Vulture Finance}} and worked with \href{https://www.arthswap.org}{\textbf{ArthSwap}} on their Astar AMM. Built \href{https://github.com/niklabh/velocidb}{\textbf{VelociDB}} (MVCC, lock-free structures, io\_uring, SIMD). CTO of \href{https://polkassembly.io}{\textbf{Polkassembly}}.
 
 % ============================================================
 %  Experience
 % ============================================================
 \section{Experience}
 
-\role{\href{https://polkassembly.io/}{Polkassembly}}{CTO \& Co-founder}{Aug 2021 -- Present}{Berlin}
+\role{\href{https://polkassembly.io/}{Polkassembly}}{CTO \& Co-founder}{Jul 2023 -- Present}{Berlin}
 \begin{bullets}
-    \item Founded and architected Polkadot's flagship governance platform: 1,700+ referenda tracked, \$300M+ in treasury decisions facilitated, 250K+ participants.
-    \item Built Rust + Substrate backends for real-time proposal analysis, validator coordination and delegated voting; integrated AI-assisted analysis and autonomous voting agents.
-    \item Shipped full-stack governance flows in Next.js, TypeScript and Polkadot.js.
-    \item Pioneered inscription tokens (Blobscriptions) and EVM contract deployments on Kusama.
-    \item Grew the open-source organization from 1 to 20 engineers; led architecture, hiring and code review.
+    \item Founded and architected Polkadot's governance platform: 1,700+ referenda tracked, \$300M+ in treasury decisions facilitated, 250K+ participants.
+    \item Built Rust and Substrate backends for proposal and account state, validator coordination, delegated voting, and transaction submission.
+    \item Grew the open-source organization from 1 to 20 engineers; led architecture, hiring, and code review.
 \end{bullets}
 
-\role{DFINITY Foundation}{Senior Developer Relations Engineer}{Feb 2022 -- Nov 2022}{Berlin}
+\role{Astar}{Senior Protocol Engineer}{Feb 2022 -- Jun 2023}{Berlin}
 \begin{bullets}
-    \item Supported Rust and Motoko developers building DeFi primitives and secure canister deployments on the Internet Computer.
-    \item Ran the Developer Partner \& Grants program; evaluated and funded Rust-based protocol enhancements.
-    \item Authored governance proposals that expanded staking participation in a \$6B+ ecosystem.
+    \item Developed Astar's parachain runtime and governance logic in Rust and Substrate.
+    \item Worked on astar.js, astar apps, astar base, and astar portal.
+    \item Worked with the Astar gas estimation API and faucet.
+    \item Worked with ArthSwap on their Astar AMM: constant-product pools, swap execution, and liquidity accounting.
 \end{bullets}
 
 \role{Parity Technologies}{Principal Engineer}{Dec 2019 -- Jul 2021}{Berlin}
 \begin{bullets}
-    \item Core contributor to the launch of Polkadot and Kusama: shipped runtime/ledger code in Rust + Substrate.
-    \item Implemented validator lifecycle, subnet coordination logic, and staking flows hardened for adversarial environments.
-    \item Collaborated with parachain teams (e.g., Astar Network) on Substrate runtime work.
+    \item Core contributor to the Polkadot and Kusama launches: shipped Substrate runtime code in Rust.
+    \item Implemented the governance pallet's state transitions: proposals, referenda, voting, and scheduled enactment.
+    \item Shipped validator lifecycle and staking flows for account-state updates, hardened for adversarial validator behavior.
 \end{bullets}
 
-\role{Frontier Car Group}{Senior Software Engineer}{Oct 2017 -- Nov 2019}{Berlin}
-\begin{bullets}
-    \item Built used-car marketplaces serving emerging markets across LATAM, Africa and Asia.
-\end{bullets}
-
-\role{Tokopedia}{Senior Software Engineer}{Jan 2016 -- Sep 2017}{Delhi}
-\begin{bullets}
-    \item Created \textit{m.tokopedia.com} (Tokopedia Lite) --- winner of Google's Best PWA award.
-\end{bullets}
-
-\role{Paytm}{Software Engineer}{Jun 2013 -- Dec 2015}{Delhi}
-\begin{bullets}
-    \item Founding engineer on India's leading P2P payments platform (300M+ users); scaled microservices to 100M+ users.
-\end{bullets}
+\vspace{3pt}
+{\color{muted}\textbf{Earlier}} ---
+\textbf{Paytm} (2013--2015), founding engineer, payments microservices to 100M+ users.
+\textbf{Tokopedia} (2016--2017), Tokopedia Lite, Google's Best PWA.
+\textbf{Frontier Car Group} (2017--2019), marketplaces across Latin America, Africa, and Asia.
 
 % ============================================================
 %  Selected Projects
 % ============================================================
-\section{Selected Open-Source Projects}
+\section{Selected Projects}
 
-\textbf{\href{https://github.com/niklabh/oxide}{Oxide}} \hfill \textit{A binary-native browser in Rust.}\\
-A reimagining of the web where pages are WebAssembly modules, not HTML/JS. Capability-based sandbox built on Wasmtime, Tokio and egui.
+\textbf{\href{https://vulture.finance}{Vulture Finance}} \hfill \textit{Stableswap AMM.}\\
+Built stableswap and AMM logic: swap execution, pool state, and liquidity accounting for correlated assets.
 
-\vspace{4pt}
-\textbf{\href{https://github.com/niklabh/velocidb}{VelociDB}} \hfill \textit{A modern embedded database engine in Rust.}\\
-SQLite-inspired storage engine optimized for modern hardware: MVCC, async I/O on io\_uring, and SIMD vectorization.
+\vspace{2pt}
+\textbf{\href{https://github.com/niklabh/velocidb}{VelociDB}} \hfill \textit{Embedded database engine in Rust.}\\
+SQLite-inspired storage engine for modern hardware: MVCC, async I/O on io\_uring, lock-free structures, and SIMD vectorization.
+
+\vspace{2pt}
+\textbf{\href{https://github.com/niklabh/oxide}{Oxide}} \hfill \textit{Binary-native browser in Rust.}\\
+WebAssembly sandbox on Wasmtime and Tokio, with capability-based defaults.
 
 % ============================================================
 %  Education
@@ -154,11 +148,11 @@ SQLite-inspired storage engine optimized for modern hardware: MVCC, async I/O on
 \section{Skills}
 
 \begin{bullets}
-    \item \textbf{Languages:} Rust (expert), TypeScript, JavaScript, Go, Motoko, Solidity.
-    \item \textbf{Blockchain \& Distributed:} Substrate, FRAME, Polkadot SDK, WASM, ICP, EVM, Staking Design, Cryptography.
-    \item \textbf{Systems:} MVCC, io\_uring, Lock-free data structures, SIMD, NVMe, Sandboxing, Performance Engineering.
-    \item \textbf{Web \& Data:} Next.js, React, PostgreSQL, Redis, Elasticsearch, AWS, Docker, CI/CD.
-    \item \textbf{AI:} OpenAI/GPT-4 Agents, Local LLM inference, ComfyUI, Stable Diffusion.
+    \item \textbf{Languages:} Rust (expert), Solidity, Go, TypeScript.
+    \item \textbf{Protocol:} Substrate, FRAME, Polkadot SDK, governance pallet, WebAssembly, EVM.
+    \item \textbf{On-chain exchange:} AMMs, stableswap, constant-product pools, liquidity accounting, swap execution.
+    \item \textbf{Systems:} MVCC, io\_uring, lock-free data structures, SIMD, Tokio, Wasmtime, performance engineering.
+    \item \textbf{Data \& infra:} PostgreSQL, Redis, AWS, Docker, CI/CD.
 \end{bullets}
 
 \end{document}
